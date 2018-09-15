@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/maestrano/mno-enterprise
-  revision: fa7329e4c652496876dffa32ef146780b46db3a9
+  revision: 0e00a690fe2b43fce127ab18485428f779873ae1
   branch: 4.0
   specs:
     mno-enterprise (4.0.0.pre.dev)
@@ -30,7 +30,7 @@ GIT
       json_api_client (~> 1.5.3)
       jwt (~> 1.4)
       money (~> 6.5, >= 6.5.1)
-      omniauth (~> 1.3.1)
+      omniauth (~> 1.8.1)
       prawn (~> 2.0, >= 2.0.1)
       prawn-table (~> 0.2.1)
       rails (~> 4.2, >= 4.2.0)
@@ -139,7 +139,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
-    fastimage (2.1.3)
+    fastimage (2.1.4)
     ffi (1.9.23)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -168,8 +168,7 @@ GEM
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     i18n_data (0.7.0)
-    intercom (3.5.25)
-      json (>= 1.8)
+    intercom (3.5.26)
     jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -202,10 +201,10 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    mini_mime (1.0.0)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    money (6.11.3)
+    money (6.12.0)
       i18n (>= 0.6.4, < 1.1)
     multi_json (1.13.1)
     multi_xml (0.6.0)
@@ -221,13 +220,13 @@ GEM
     ngannotate-rails (1.2.2)
       execjs
       rails (>= 3.1)
-    nokogiri (1.8.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.5.0)
       nokogiri
-    omniauth (1.3.2)
-      hashie (>= 1.2, < 4)
-      rack (>= 1.0, < 3)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     parallel (1.12.1)
     parser (2.5.1.0)
@@ -239,7 +238,7 @@ GEM
       ttfunk (~> 1.5)
     prawn-table (0.2.2)
       prawn (>= 1.3.0, < 3.0.0)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     puma (3.11.4)
     rack (1.6.10)
     rack-rewrite (1.5.1)
@@ -326,7 +325,7 @@ GEM
     ruby-progressbar (1.9.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    sanitize (4.6.5)
+    sanitize (4.6.6)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
       nokogumbo (~> 1.4)
@@ -353,7 +352,7 @@ GEM
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
@@ -404,4 +403,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
