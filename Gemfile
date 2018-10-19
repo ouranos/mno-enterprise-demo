@@ -29,7 +29,7 @@ gem 'uglifier', '>= 1.3.0'
 group :uat, :production do
   gem 'newrelic_rpm'
   gem 'rails_stdout_logging' # For Nex! logs
-  gem 'nex_client', '~> 0.16.0'
+  gem 'nex_client', '~> 0.17'
 end
 
 # CI gems
