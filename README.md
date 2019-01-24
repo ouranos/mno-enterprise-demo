@@ -2,6 +2,11 @@
 
 Generic mno-enterprise express project
 
+| branch | status |
+| ------ | ------ |
+| [master](https://github.com/maestrano/mno-enterprise-demo/tree/master) | [![Build Status](https://travis-ci.org/maestrano/mno-enterprise-demo.svg?branch=master)](https://travis-ci.org/maestrano/mno-enterprise-demo) |
+| [develop](https://github.com/maestrano/mno-enterprise-demo/tree/develop) | [![Build Status](https://travis-ci.org/maestrano/mno-enterprise-demo.svg?branch=develop)](https://travis-ci.org/maestrano/mno-enterprise-demo) |
+
 ## Getting started
 
 Update `config/settings/development.yml` and `config/application.yml` with the configuration you've been provided with.
