@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Reload frontend stylesheets on changes
-  config.less.paths << "#{Rails.root}/frontend/src/app/stylesheets"
+  config.less.paths << Rails.root.join('frontend', 'src', 'app', 'stylesheets')
 
   # Settings specified here will take precedence over those in config/application.rb.
 

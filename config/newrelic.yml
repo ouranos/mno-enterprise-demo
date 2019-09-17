@@ -43,5 +43,9 @@ test:
 uat:
   <<: *default_settings
 
+sit:
+  <<: *default_settings
+  app_name: frontend-demo-sit
+
 production:
   <<: *default_settings

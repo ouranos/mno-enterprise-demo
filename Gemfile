@@ -25,8 +25,11 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+# Background Jobs
+gem 'sucker_punch', '~> 2.0'
+
 # Ops gems
-group :uat, :production do
+group :sit, :uat, :production do
   gem 'newrelic_rpm'
   gem 'rails_stdout_logging' # For Nex! logs
   gem 'nex_client', '~> 0.17'

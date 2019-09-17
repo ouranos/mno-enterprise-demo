@@ -10,7 +10,7 @@
 /*-----------------------------------------------------------------------*/
 /*                          Fonts & Text                                 */
 /*-----------------------------------------------------------------------*/
-@font-family-sans-serif:             'Lato Regular', Arial, "Helvetica Neue", Helvetica, sans-serif;
+@font-family-sans-serif:             "custom", "Helvetica Neue", Helvetica, sans-serif;
 @font-family-base:                   @font-family-sans-serif;
 @font-path:                          '/dashboard/fonts';
 @small:                              11px;
@@ -33,28 +33,86 @@
 @login-bg-color:                      @bg-main-color;
 @login-box-grid-position:             { margin-top: 80px; .make-sm-column(4); .make-sm-column-offset(4); };
 
-@login-box-corners:                   0px;
-@login-box-title-color:               @text-inverse-color;
+@login-box-corners:                   10px;
+@login-box-title-color:               @bg-on-bg-inverse-color;
 @login-box-title:                     { text-transform: uppercase; };
 @login-box-title-display-box-arrow:   false;
 
-@login-box-bg-color:                  @bg-inverse-color;
+@login-box-bg-color:                  rgba(255, 255, 255, 0.67);
 @login-box-padding:                   20px;
 @login-box-brand-logo-img:            "mno_enterprise/main-logo.png";
-@login-box-brand-logo:                { min-height: 61px; max-width: 160px; max-height: 130px; margin: 17px auto 5px auto; };
+@login-box-brand-logo:                { margin: -6px auto 5px auto; min-height: 118px; max-width: 160px; max-height: 160px; background-size: 100%; };
 @login-box-btn-login:                 { width: 100%; };
 
 @login-box-sso-intuit-logo:           "mno_enterprise/logo-intuit.png";
-@login-box-oauth-text-color:          #fff;
+@login-box-oauth-text-color:          @text-strong-color;
 @login-box-oauth-bg-color-facebook:   #3b5998;
 @login-box-oauth-bg-color-google:     #dd4b39;
 @login-box-oauth-bg-color-linkedin:   #0074C4;
 @login-box-oauth-bg-color-intuit:     #fff;
 
 /*-----------------------------------------------------------------------*/
+/*                           Onboarding                                  */
+/*-----------------------------------------------------------------------*/
+// Layout
+//--------------------------------------
+@onboarding-header-height: 60px;
+@onboarding-header-background-color: @bg-inverse-color;
+@onboarding-header-font-color: @text-inverse-color;
+@onboarding-header-menu-text: @text-inverse-color;
+@onboarding-header-menu-text-hover: @text-strong-color;
+@onboarding-header-bg-menu: @bg-inverse-color;
+@onboarding-header-bg-menu-hover: @bg-on-bg-inverse-color;
+@onboarding-subheader-height: 50px;
+@onboarding-subheader-background-color: @decorator-main-color;
+@onboarding-subheader-font-color: @text-strong-color;
+@onboarding-breadcrumb-badge-color: @text-inverse-strong-color;
+@onboarding-breadcrumb-badge-color-active: @text-inverse-strong-color;
+@onboarding-breadcrumb-badge-bg: @bg-inverse-color;
+@onboarding-breadcrumb-badge-bg-active: @decorator-touch-color;
+@onboarding-breadcrumb-link-color: @text-strong-color;
+@onboarding-content-panel-bg: @bg-inverse-color;
+@onboarding-content-panel-color: @bg-on-bg-inverse-color;
+@onboarding-content-panel-border-radius: 4px;
+
+// App features
+//--------------------------------------
+@onboarding-app-features-border: 1px solid @text-strong-color;
+@onboarding-app-features-color: @text-strong-color;
+@onboarding-app-features-checked: @brand-success;
+@onboarding-app-features-unchecked: @text-strong-color;
+
+// App selector
+//--------------------------------------
+@onboarding-app-selector-title: @text-strong-color;
+@onboarding-app-selector-info: @text-strong-color;
+@onboarding-app-selector-check-color: rgba(red(@brand-success), green(@brand-success), blue(@brand-success), 0.3);
+
+// App cards
+//--------------------------------------
+@onboarding-app-card-bg-color: white;
+@onboarding-app-card-text-color: @text-strong-color;
+@onboarding-app-card-padding: 10px;
+
+// App cards fetching loader
+//--------------------------------------
+@onboarding-fetching-apps-loader-color: white;
+
+// Connec! entities
+//--------------------------------------
+@onboarding-app-entities-checked: @brand-success;
+@onboarding-app-entities-unchecked: @brand-danger;
+
+// App connect
+//--------------------------------------
+@onboarding-app-connect-check: @brand-success;
+@onboarding-app-connect-loader: @decorator-main-color;
+
+/*-----------------------------------------------------------------------*/
 /*                           Dashboard Layout                            */
 /*-----------------------------------------------------------------------*/
-@dashboard-bg-color:                            @bg-main-color;
+@dashboard-bg-background:                       "/dashboard/images/main-background.jpg";
+@dashboard-bg-color:                            @dashboard-side-menu-bg-color;
 
 @dashboard-section-title-color:                 @text-strong-color;
 @dashboard-section-title-alignment:             center;
@@ -73,20 +131,20 @@
 // Side navbar menu
 //--------------------------------------
 @dashboard-side-menu-padding:                   30px 0px 0px 14px;
-@dashboard-side-menu-bg-color:                  @bg-inverse-color;
+@dashboard-side-menu-bg-color:                  @bg-on-bg-inverse-color;
 
-@dashboard-side-menu-brand-logo-img:            "../images/main-logo.png";
-@dashboard-side-menu-brand-logo:                { background-size: 204px; width: 51px; margin-left: 5px; };
-@dashboard-side-menu-brand-logo-expanded:       { width: 201px; background-size: 100%; };
+@dashboard-side-menu-brand-logo-img:            "/dashboard/images/main-logo-small.png";
+@dashboard-side-menu-brand-logo:                { background-size: 30px; width: 51px; margin-left: 10px; height: 100px;};
+@dashboard-side-menu-brand-logo-expanded:       { width: 201px; background-size: 74%; padding-right: 13px; margin-left: 13px; background-image: url(/dashboard/images/main-logo.png);};
 
-@dashboard-side-menu-link-color:                @text-inverse-color;
+@dashboard-side-menu-link-color:                @text-strong-color;
 @dashboard-side-menu-link-bg-color:             @dashboard-side-menu-bg-color;
 
-@dashboard-side-menu-link-hover-color:          @dashboard-side-menu-bg-color;
+@dashboard-side-menu-link-hover-color:          @decorator-inverse-color;
 @dashboard-side-menu-link-hover-bg-color:       lighten(@bg-main-color,15%);
 
-@dashboard-side-menu-link-active-color:         @dashboard-side-menu-bg-color;
-@dashboard-side-menu-link-active-bg-color:      @bg-main-color;
+@dashboard-side-menu-link-active-color:         @decorator-inverse-color;
+@dashboard-side-menu-link-active-bg-color:      white;
 
 @_default_style:                                { .fa-2x; margin-top: 6px; margin-left: 2px; color: @dashboard-side-menu-link-color; };
 @_default_style_active:                         { @_default_style(); color: @dashboard-side-menu-link-active-color; };
@@ -107,20 +165,22 @@
 //--------------------------------------
 @dashboard-cpy-select-width:                    280px;
 @dashboard-cpy-select-pic-width:                50px;
-@dashboard-cpy-select-bg-color:                 @bg-inverse-color;
+@dashboard-cpy-select-bg-color:                 @bg-on-bg-inverse-color;
 @dashboard-cpy-select-border-radius:            0 0 0 6px;
 @dashboard-cpy-select-border-color:             @text-inverse-color;
-@dashboard-cpy-select-list-border-color:        lighten(@bg-inverse-color, 10%);
+@dashboard-cpy-select-list-border-color:        @bg-main-color;
 
-@dashboard-cpy-select-header-title-color:       @text-inverse-color;
+@dashboard-cpy-select-header-title-color:       @text-strong-color;
 @dashboard-cpy-select-header-company-color:     @decorator-inverse-color;
+@dashboard-cpy-select-header-text-bold-color:   @text-strong-color;
+@dashboard-cpy-select-header-text-color:        @text-strong-color;
 @dashboard-cpy-select-header-text-size:         13px;
 
 @dashboard-cpy-select-link-text-color:          @link-color;
-@dashboard-cpy-select-link-icon-color:          @decorator-touch-color;
+@dashboard-cpy-select-link-icon-color:          @decorator-inverse-color;
 
-@dashboard-cpy-select-link-color:               @text-inverse-strong-color;
-@dashboard-cpy-select-link-hover-color:         @text-strong-color;
+@dashboard-cpy-select-link-color:               @text-strong-color;
+@dashboard-cpy-select-link-hover-color:         @decorator-inverse-color;
 @dashboard-cpy-select-link-hover-bg-color:      @text-inverse-strong-color;
 
 /*-----------------------------------------------------------------------*/
@@ -199,8 +259,8 @@
 /*-----------------------------------------------------------------------*/
 @dashboard-account-tabs-bg-color:                    @bg-on-bg-inverse-color;
 @dashboard-account-tabs-text-color:                  @text-inverse-color;
-@dashboard-account-panel-header-bg-color:            @bg-inverse-color;
-@dashboard-account-panel-header-text-color:          @text-inverse-color;
+@dashboard-account-panel-header-bg-color:            @bg-on-bg-inverse-color;
+@dashboard-account-panel-header-text-color:          #1d8ba2;
 @dashboard-account-panel-body-bg-color:              @bg-on-bg-inverse-color;
 @dashboard-account-panel-text-color:                 @text-strong-color;
 @dashboard-account-inline-text-color-checked:        @brand-success;
@@ -211,41 +271,41 @@
 /*-----------------------------------------------------------------------*/
 // Tab Heading
 //--------------------------------------
-@dashboard-cpy-tabs-bg-color:                    @decorator-main-color;
+@dashboard-cpy-tabs-bg-color:                    @text-inverse-strong-color;
 @dashboard-cpy-tabs-text-color:                  @text-strong-color;
 @dashboard-cpy-tabs-border-radius:               2px;
 
 @dashboard-cpy-tabs-subline-size:                0px;
 @dashboard-cpy-tabs-subline-color:               transparent;
 
-@dashboard-cpy-tabs-active-text-color:           @decorator-main-color;
-@dashboard-cpy-tabs-active-bg-color:             @bg-inverse-color;
+@dashboard-cpy-tabs-active-text-color:           @decorator-inverse-color;
+@dashboard-cpy-tabs-active-bg-color:             transparent;
 
-@dashboard-cpy-tabs-hover-text-color:            @decorator-main-color;
-@dashboard-cpy-tabs-hover-bg-color:              @bg-inverse-color;
+@dashboard-cpy-tabs-hover-text-color:            @decorator-inverse-color;
+@dashboard-cpy-tabs-hover-bg-color:              @text-inverse-strong-color;
 
 // Tab Content
 //--------------------------------------
 @dashboard-cpy-tabcontent-header-bg-color:       @bg-inverse-color;
 @dashboard-cpy-tabcontent-body-bg-color:         @bg-on-bg-inverse-color;
-@dashboard-cpy-tabcontent-bg-color:              @bg-inverse-color;
-@dashboard-cpy-tabcontent-text-color:            @text-inverse-strong-color;
+@dashboard-cpy-tabcontent-bg-color:              @bg-on-bg-inverse-color;
+@dashboard-cpy-tabcontent-text-color:            @text-strong-color;
 
 // Teams section
 //--------------------------------------
-@dashboard-cpy-teams-matrix-bg-color:            @bg-inverse-color;
-@dashboard-cpy-teams-matrix-border-color:        @bg-inverse-color;
-@dashboard-cpy-teams-matrix-text-color:          @text-inverse-color;
-@dashboard-cpy-teams-matrix-text-hover-color:    @text-inverse-color;
+@dashboard-cpy-teams-matrix-bg-color:            @bg-on-bg-inverse-color;
+@dashboard-cpy-teams-matrix-border-color:        @bg-on-bg-inverse-color;
+@dashboard-cpy-teams-matrix-text-color:          @text-strong-color;
+@dashboard-cpy-teams-matrix-text-hover-color:    @decorator-inverse-color;
 @dashboard-cpy-teams-matrix-text-edit-color:     @text-strong-color;
 
 /*-----------------------------------------------------------------------*/
 /*                              Dock                                     */
 /*-----------------------------------------------------------------------*/
-@mno-dock-bg-color:                             @decorator-inverse-color;
-@mno-dock-add-app-border-color:                 white;
-@mno-dock-add-app-text-color:                   white;
-@mno-dock-expand-arrow-color:                   white;
+@mno-dock-bg-color:                             @bg-on-bg-inverse-color;
+@mno-dock-add-app-border-color:                 lighten(@text-strong-color, 40%);
+@mno-dock-add-app-text-color:                   lighten(@text-strong-color, 40%);
+@mno-dock-expand-arrow-color:                   lighten(@text-strong-color, 40%);
 @mno-dock-expand-arrow-color-hover:             darken(@mno-dock-expand-arrow-color, 5%);
 @mno-dock-expand-left-border-color:             white;
 @mno-dock-app-loader-color:                     @mno-dock-expand-arrow-color;
@@ -256,11 +316,11 @@
 @mno-dock-app-box-border:                       1px solid rgba(0, 0, 0, 0.15);
 
 @mno-dock-sub-menu-box-shadow:                  0 6px 12px rgba(0, 0, 0, 0.175);
-@mno-dock-sub-menu-bg-color:                    @bg-inverse-color;
-@mno-dock-sub-menu-hover:                       @decorator-main-color;
-@mno-dock-sub-menu-icon:                        @decorator-touch-color;
-@mno-dock-sub-menu-text-color:                  @text-inverse-color;
-@mno-dock-sub-menu-text-hover-color:            darken(@mno-dock-sub-menu-text-color, 10%);
+@mno-dock-sub-menu-bg-color:                    @bg-on-bg-inverse-color;
+@mno-dock-sub-menu-hover:                       @decorator-inverse-color;
+@mno-dock-sub-menu-icon:                        @text-strong-color;
+@mno-dock-sub-menu-text-color:                  @text-strong-color;
+@mno-dock-sub-menu-text-hover-color:            @bg-on-bg-inverse-color;
 
 // Mobile dock
 @mno-dock-mobile-bg-color:                      @bg-on-bg-inverse-color;
@@ -301,7 +361,7 @@
 // Widgets
 //--------------------------------------
 // Global
-@impac-widget-background-color:                 @bg-on-bg-inverse-color;
+@impac-widget-background-color:                 @text-inverse-strong-color;
 @impac-widget-text-color:                       black;
 @impac-widget-text-color-light:                 @text-strong-color;
 @impac-widget-borders-color:                    lighten(@impac-widget-text-color, 80%);
@@ -309,8 +369,8 @@
 @impac-widget-top-buttons-color:                lighten(@impac-widget-text-color, 70%);
 
 // Title
-@impac-widget-title-text-color:                 white;
-@impac-widget-title-bg:                         @bg-inverse-color;
+@impac-widget-title-text-color:                 @text-strong-color;
+@impac-widget-title-bg:                         @text-inverse-strong-color;
 @impac-widget-title-border:                     solid 1px @impac-widget-borders-color;
 @impac-widget-title-text-transform:             uppercase;
 @impac-widget-title-text-size:                  12px;
@@ -348,18 +408,18 @@
 /*-----------------------------------------------------------------------*/
 /*                       Marketplace Section                             */
 /*-----------------------------------------------------------------------*/
-@dashboard-marketplace-search-text-color:             @text-strong-color;
-@dashboard-marketplace-search-border-color:           @text-strong-color;
+@dashboard-marketplace-search-text-color:             @decorator-main-color;
+@dashboard-marketplace-search-border-color:           @decorator-main-color;
 
 @dashboard-marketplace-tile-bg-color:                 @bg-on-bg-inverse-color;
 @dashboard-marketplace-tile-text-color:               @text-strong-color;
 @dashboard-marketplace-tile-name-color:               @bg-inverse-color;
-@dashboard-marketplace-tile-img-border-color:         @decorator-main-color;
+@dashboard-marketplace-tile-img-border-color:         @text-strong-color;
 
-@dashboard-marketplace-tile-hover-bg-color:           @decorator-main-color;
-@dashboard-marketplace-tile-hover-text-color:         @dashboard-marketplace-tile-text-color;
-@dashboard-marketplace-tile-hover-img-border-color:   darken(@decorator-main-color,10%);
-@dashboard-marketplace-tile-hover-arrow-color:        @text-strong-color;
+@dashboard-marketplace-tile-hover-bg-color:           @bg-on-bg-inverse-color;
+@dashboard-marketplace-tile-hover-text-color:         @decorator-inverse-color;
+@dashboard-marketplace-tile-hover-img-border-color:   @text-strong-color;
+@dashboard-marketplace-tile-hover-arrow-color:        @decorator-inverse-color;
 
 @dashboard-marketplace-show-header-text-color:        @text-strong-color;
 @dashboard-marketplace-show-sections-bg-color:        @bg-on-bg-inverse-color;

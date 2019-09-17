@@ -12,7 +12,10 @@ angular.module 'mnoEnterpriseAngular'
     kpis:
       index: "#{mnoHub}/impac/kpis"
 
+  bolts = [{ provider: 'maestrano', name: 'finance', category: 'accounts' }]
+
   ImpacRoutesProvider.configureRoutes(data)
+  ImpacRoutesProvider.configureBolts('v2', bolts)
 )
 
 #======================================================================================
@@ -22,12 +25,13 @@ angular.module 'mnoEnterpriseAngular'
   options =
     # link to the marketplace
     dataNotFoundConfig:
-      linkUrl: '#!/marketplace'
-      linkTarget: '_self'
+      linkUrl: 'marketplace'
     # remove useless messages
     dhbErrorsConfig:
       firstTimeCreated:
         note: ''
+    dhbConfig:
+      multiCompany: true
     # configurations for the dashboard selector feature.
     dhbSelectorConfig:
       pdfModeEnabled: true
@@ -37,6 +41,28 @@ angular.module 'mnoEnterpriseAngular'
     # alert notifications options
     alertsConfig:
       enableAlerts: true
+    widgetSettings:
+      tagging:
+        enabled: true
+    widgetSelectorConfig:
+      blacklist: [
+        'maestrano/finance/account_balance'
+        'maestrano/finance/assets_summary'
+        'maestrano/finance/balance_sheet'
+        'maestrano/finance/classifications_summary'
+        'maestrano/finance/current_ratio'
+        'maestrano/finance/debt_service_ratio'
+        'maestrano/finance/detailed_classifications'
+        'maestrano/finance/ebitda'
+        'maestrano/finance/expense_weight'
+        'maestrano/finance/expenses_revenue'
+        'maestrano/finance/overall_turnover'
+        'maestrano/finance/profit_and_loss'
+        'maestrano/finance/accounts_comparison'
+        'maestrano/finance/payable_receivable'
+        'maestrano/finance/aged_payables_receivables'
+        'maestrano/finance/average_profit'
+      ]
 
   ImpacThemingProvider.configure(options)
 )

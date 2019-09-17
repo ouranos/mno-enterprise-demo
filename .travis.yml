@@ -1,6 +1,12 @@
 language: ruby
 script:
   - bundle install --quiet
-  - bundle exec rake
+#  - bundle exec rake
+  - bundle exec bundler-audit update
+  - bundle exec bundler-audit check --ignore CVE-2019-5421 CVE-2015-9284 CVE-2019-16109
+  - bundle exec rake brakeman:run
+  - bundle exec rake rubocop
+  - bundle exec rspec
+
 rvm:
-  - 2.3.4
+  - 2.3

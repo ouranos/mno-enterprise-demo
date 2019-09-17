@@ -14,3 +14,6 @@
  *= require_self
  *= require main
  */
+.registration .checkbox-section label {
+  color: #1d8ba2 !important;
+}
