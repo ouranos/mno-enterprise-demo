@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gnupg \
     curl \
+    python \
   && rm -rf /var/lib/apt/lists/*
 
 # Install nodejs
@@ -75,9 +76,6 @@ RUN bundle config --global frozen 1 \
 # Copy the app
 COPY . .
 
-# TODO: move up
-RUN apt-get update && apt-get install -y --no-install-recommends python
-
 ## Build frontend
 #RUN set -ex \
 #    && echo '{ "allow_root": true }' > /root/.bowerrc \
@@ -117,8 +115,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 #        tzdata
 
 # Add user
-RUN addgroup -g 1000 -S app \
- && adduser -u 1000 -S app -G app
+RUN addgroup --system --gid 1000 app \
+ && adduser --system --uid 1000 --ingroup app app
 
 # Copy app with gems from former build stage
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
