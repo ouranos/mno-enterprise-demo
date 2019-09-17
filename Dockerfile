@@ -110,3 +110,32 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vendor="Maestrano" \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0"
+
+## TODO: remove curl and use nc for healthcheck?
+#RUN apk add --update --no-cache \
+#        curl \
+#        tzdata
+
+# Add user
+RUN addgroup -g 1000 -S app \
+ && adduser -u 1000 -S app -G app
+
+# Copy app with gems from former build stage
+COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
+COPY --from=Builder --chown=app:app /app /app
+
+USER app
+
+# Set Rails env
+ENV RAILS_LOG_TO_STDOUT true
+
+WORKDIR /app
+
+# Save timestamp of image building
+RUN date -u > BUILD_TIME
+
+ENTRYPOINT ["docker/entrypoint.sh"]
+
+EXPOSE 3000
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
